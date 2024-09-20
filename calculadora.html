@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Energética</title>
+    <link rel="stylesheet" href="calculadora_styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora Energética</h1>
+
+        <label for="room">Selecione o Ambiente:</label>
+        <select id="room" onchange="updateAppliances()">
+            <option value="sala">Sala</option>
+            <option value="cozinha">Cozinha</option>
+            <option value="quarto">Quarto</option>
+            <option value="banheiro">Banheiro</option> 
+        </select>
+
+        <label for="appliance">Selecione o Aparelho:</label>
+        <select id="appliance">
+            <!-- Aparelhos serão adicionados dinamicamente -->
+        </select>
+
+        <label for="power">Informe a Potência do Aparelho (W):</label>
+        <input type="number" id="power" placeholder="Ex: 1500">
+
+        <label for="time">Tempo de Uso (Horas):</label>
+        <input type="number" id="time" placeholder="Ex: 4">
+
+        <label for="tariff">Selecione a Bandeira Tarifária:</label>
+<select id="tariff">
+    <option value="verde" class="verde">Verde (Sem acréscimo)</option>
+    <option value="amarela" class="amarela">Amarela (R$ 0,01874/kWh)</option>
+    <option value="vermelha1" class="vermelha1">Vermelha 1 (R$ 0,03971/kWh)</option>
+    <option value="vermelha2" class="vermelha2">Vermelha 2 (R$ 0,09492/kWh)</option>
+</select>
+
+        <label for="cost">Custo da Energia (R$/kWh):</label>
+        <input type="number" id="cost" placeholder="Ex: 0.85">
+
+        <button onclick="calculateEnergy()">Calcular Consumo</button>
+
+        <div id="result"></div>
+    </div>
+    <script src="calculadora.js"></script>
+</body>
+</html>
